@@ -219,6 +219,17 @@ p {
     text-transform: uppercase;
 }
 
+.center-image {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%
+}
+
+.center-image img {
+    margin: auto;
+}
+
 #portfolio .lead {
     text-align: center;
     font-size: 18px;
@@ -675,4 +686,56 @@ img {
 
 .button1:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.back_button {
+    background-color: #25A1AB;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 2px 2px;
+    font-family: Calibri, sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+.info {
+    width: 80%;
+    font-size: 15px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.info ul li {
+    font-size: 15px;
+    padding: 2px;
+    list-style-type: none;
+    transition: 0.8s all;
+    text-align: center;
+}
+
+.info img {
+    width: 50%;
+    border-radius: 4px;
+    display: inline;
+    float: left;
+}
+
+.iframe-container {
+    width: 50%;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline;
+    float: right;
+}
+
+iframe {
+    border-radius: 4px;
+    
 }
