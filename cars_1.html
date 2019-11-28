@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JK's Autoworld - Top 50 Cars List</title>
+    <link rel="icon" href="images/jk_autoworld_logo.png">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/animate_1.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+        #responsive {
+            display: inline-block;
+            position: relative;
+        }
+
+        #responsive img {
+            border-radius: 4px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            #responsive {
+                width: 50%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            #responsive {
+                width: 100%;
+            }
+        }
+
+        .modal {
+            z-index: 1;
+            display: none;
+            padding-top: 10px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.8)
+        }
+
+        .modal-content {
+            position: relative;
+            top: 30%;
+            left: 30%;
+            right: auto;
+            bottom: auto;
+        }
+
+        .modal-content img {
+            max-height: 90vh;
+            width: auto;
+        }
+
+        .modal-hover-opacity {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-backface-visibility: hidden
+        }
+
+        .modal-hover-opacity:hover {
+            opacity: 0.60;
+            filter: alpha(opacity=60);
+            -webkit-backface-visibility: hidden
+        }
+
+
+        .close {
+            text-decoration: none;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            color: white
+        }
+
+        .modal-content,
+        #caption {
+
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Center website */
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .row {
+            margin: 10px -16px;
+        }
+
+        /* Add padding BETWEEN each column */
+        .row,
+        .row>.column {
+            padding: 8px;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            /*width: 33.33%; */
+            display: none;
+            /* Hide all elements by default */
+        }
+
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* The "show" class is added to the filtered elements */
+        .show {
+            display: block;
+        }
+
+        /* Style the buttons */
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        .btn.active {
+            background-color: #666;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- MAIN (Center website) -->
+    <div class="main">
+
+        <h1>50 Favorite Cars of All-Time</h1>
+        <hr>
+
+        <h2>Filter By Manfacturer</h2>
+
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('aston_martin')">Aston Martin</button>
+            <button class="btn" onclick="filterSelection('audi')">Audi</button>
+            <button class="btn" onclick="filterSelection('bmw')">BMW</button>
+            <button class="btn" onclick="filterSelection('chevrolet')">Chevrolet</button>
+            <button class="btn" onclick="filterSelection('dacia')">Dacia</button>
+            <button class="btn" onclick="filterSelection('ferari')">Ferrari</button>
+            <button class="btn" onclick="filterSelection('fiat')">Fiat</button>
+            <button class="btn" onclick="filterSelection('ford')">Ford</button>
+            <button class="btn" onclick="filterSelection('honda')">Honda</button>
+            <button class="btn" onclick="filterSelection('jaguar')">Jaguar</button>
+            <button class="btn" onclick="filterSelection('kia')">Kia</button>
+            <button class="btn" onclick="filterSelection('lamborghini')">Lamborghini</button>
+            <button class="btn" onclick="filterSelection('lexus)">Lexus</button>
+            <button class="btn" onclick="filterSelection('mclaren')">McLaren</button>
+            <button class="btn" onclick="filterSelection('mercedes')">Mercedes</button>
+            <button class="btn" onclick="filterSelection('mitsubishi')">Mitsubishi</button>
+            <button class="btn" onclick="filterSelection('nissan')">Nissan</button>
+            <button class="btn" onclick="filterSelection('renault')">Renault</button>
+            <button class="btn" onclick="filterSelection('skoda')">Skoda</button>
+            <button class="btn" onclick="filterSelection('subaru')">Subaru</button>
+            <button class="btn" onclick="filterSelection('tesla')">Tesla</button>
+            <button class="btn" onclick="filterSelection('toyota')">Toyota</button>
+            <button class="btn" onclick="filterSelection('vauxhall')">Vauxhall</button>
+            <button class="btn" onclick="filterSelection('volkswagen')">Volkswagen</button>
+            <button class="btn" onclick="filterSelection('volvo')">Volvo</button>
+        </div>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column aston_martin">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/aston_martin_v8_vantage.jpg" alt="Aston Martin V8 Vantage" "width:590px;height:347px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Aston Martin V8 Vantage</p>
+                    <a href="aston_martin_v8_vantage.html">
+                        <button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column audi">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/audi_a3.jpg" alt="Audi A3" "width:590px;height:347px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Audi A3</p>
+                    <a href="audi_a3.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column audi">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/audi_r8.jpg" alt="Audi R8" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Audi R8</p>
+                    <a href="audi_r8.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column bmw">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/bmw_1-series.jpg" alt="BMW 1-Series" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>BMW 1-Series</p>
+                    <a href="bmw_1-series.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+             <div class="column bmw">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/bmw_1-series.jpg" alt="BMW 1-Series" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>BMW 1-Series</p>
+                    <a href="bmw_1-series.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column bmw">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/bmw_3-series.jpg" alt="BMW 3-Series" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>BMW 3-Series</p>
+                    <a href="bmw_3-series.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column bmw">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/bmw_z4.jpg" alt="BMW Z4" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>BMW Z4</p>
+                    <a href="bmw_z4.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column bmw">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/bmw_i8.jpg" alt="BMW Z4" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>BMW i8</p>
+                    <a href="bmw_i8.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_corvette.jpg" alt="Chevrolet Corvette" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Corvette</p>
+                    <a href="chevrolet_corvette.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <div class="column chevrolet">
+                <div class="content">
+                    <div id="responsive" class="wow zoomIn">
+                        <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
+                    <p>Chevrolet Camaro</p>
+                    <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
+                </div>
+            </div>
+            <!-- END GRID -->
+        </div>
+
+        <!-- END MAIN -->
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="contactform/contactform.js"></script>
+    <script>
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
+    </script>
+
+    <script>
+        $('#view-work').on('click', function() {
+            const images = $('#images').position().top;
+
+            $('html, body').animate({
+                    scrollTop: images
+                },
+                900
+            );
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+</body>
+
+</html>

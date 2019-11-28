@@ -10,11 +10,11 @@
     <link rel="icon" href="images/jk_autoworld_logo.png">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet" />
     <link href="css/animate_1.css" rel="stylesheet" />
+    <link href="css/image_filter.css" rel="stylesheet" />
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style type="text/css">
@@ -55,26 +55,26 @@
         }
 
         .modal-content {
-            position: absolute;
+            position: relative;
             top: 30%;
             left: 30%;
             right: auto;
             bottom: auto;
-            /* background-color: #fff; */
-            -webkit-background-clip: padding-box;
-            /*background-clip: padding-box;
+            /* background-color: #fff;
+             -webkit-background-clip: padding-box;
+            background-clip: padding-box;
             border: 1px solid #999;
             border: 1px solid rgba(0, 0, 0, .2);
-            border-radius: 6px;*/
+            border-radius: 6px;
             outline: 0;
             -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
-            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);*/
         }
 
-        /*.modal-content img {
+        .modal-content img {
             max-height: 90vh;
             width: auto;
-        }*/
+        }
 
         .modal-hover-opacity {
             opacity: 1;
@@ -125,7 +125,6 @@
                 transform: scale(1)
             }
         }
-
     </style>
     <!-- =======================================================
     Theme Name: OnePage
@@ -205,303 +204,332 @@
                 <div>
                     <h2 class="h2 animated">50 Favorite Cars of All-Time</h2>
                     <hr>
+                    <h3 class="h3 animated">Filter by Manufacturer</h3>
+                    <div id="myBtnContainer">
+                        <button class="btn active" onclick="filterSelection('all')">Show All</button>
+                        <button class="btn" onclick="filterSelection('aston_martin')">Aston Martin</button>
+                        <button class="btn" onclick="filterSelection('audi')">Audi</button>
+                        <button class="btn" onclick="filterSelection('bmw')"> BMW</button>
+                        <button class="btn" onclick="filterSelection('chevrolet')">Chevrolet</button>
+                        <button class="btn" onclick="filterSelection('dacia')">Dacia</button>
+                        <button class="btn" onclick="filterSelection('ferari')">Ferrari</button>
+                        <button class="btn" onclick="filterSelection('fiat')">Fiat</button>
+                        <button class="btn" onclick="filterSelection('ford')">Ford</button>
+                        <button class="btn" onclick="filterSelection('honda')">Honda</button>
+                        <button class="btn" onclick="filterSelection('jaguar')">Jaguar</button>
+                        <button class="btn" onclick="filterSelection('kia')">Kia</button>
+                        <button class="btn" onclick="filterSelection('lamborghini')">Lamborghini</button>
+                        <button class="btn" onclick="filterSelection('lexus)">Lexus</button>
+                        <button class="btn" onclick="filterSelection('mclaren')">McLaren</button>
+                        <button class="btn" onclick="filterSelection('mercedes')">Mercedes</button>
+                        <button class="btn" onclick="filterSelection('mitsubishi')">Mitsubishi</button>
+                        <button class="btn" onclick="filterSelection('nissan')">Nissan</button>
+                        <button class="btn" onclick="filterSelection('renault')">Renault</button>
+                        <button class="btn" onclick="filterSelection('skoda')">Skoda</button>
+                        <button class="btn" onclick="filterSelection('subaru')">Subaru</button>
+                        <button class="btn" onclick="filterSelection('tesla')">Tesla</button>
+                        <button class="btn" onclick="filterSelection('toyota')">Toyota</button>
+                        <button class="btn" onclick="filterSelection('vauxhall')">Vauxhall</button>
+                        <button class="btn" onclick="filterSelection('volkswagen')">Volkswagen</button>
+                        <button class="btn" onclick="filterSelection('volvo')">Volvo</button>
+                    </div>
                     <div class="container boxHolder">
-                        <div class="box">
+                        <div class="box aston_martin">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/aston_martin_v8_vantage.jpg" alt="Aston Martin V8 Vantage" "width:590px;height:347px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Aston Martin V8 Vantage</p>
                             <a href="aston_martin_v8_vantage.html">
                                 <button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box audi">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/audi_a3.jpg" alt="Audi A3" "width:590px;height:347px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Audi A3</p>
                             <a href="audi_a3.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box audi">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/audi_r8.jpg" alt="Audi R8" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Audi R8</p>
                             <a href="audi_r8.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box bmw">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/bmw_1-series.jpg" alt="BMW 1-Series" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>BMW 1-Series</p>
                             <a href="bmw_1-series.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box bmw">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/bmw_3-series.jpg" alt="BMW 3-Series" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>BMW 3-Series</p>
                             <a href="bmw_3-series.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box bmw">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/bmw_z4.jpg" alt="BMW Z4" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>BMW Z4</p>
                             <a href="bmw_z4.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box bmw">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/bmw_i8.jpg" alt="BMW i8" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>BMW i8</p>
                             <a href="bmw_i8.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box chevrolet">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/chevrolet_corvette.jpg" alt="Chevrolet Corvette" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Chevrolet Corvette</p>
                             <a href="chevrolet_corvette.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box chevrolet">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/chevrolet_camaro.jpg" alt="Chevrolet Camaro" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Chevrolet Camaro</p>
                             <a href="chevrolet_camaro.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box dacia">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/dacia_duster.jpg" alt="Dacia Duster" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Dacia Duster</p>
                             <a href="dacia_duster.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ferrari">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ferrari_f430.jpg" alt="Ferrari F430" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ferrari F430</p>
                             <a href="ferrari_f430.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ferrari">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ferrari_458.jpg" alt="Ferrari 458" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ferrari 458</p>
                             <a href="ferrari_458.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ferrari">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ferrari_ff.jpg" alt="Ferrari FF" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ferrari FF</p>
                             <a href="ferrari_ff.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ferrari">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ferrari_california.jpg" alt="Ferrari California" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ferrari California</p>
                             <a href="ferrari_california.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box fiat">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/fiat_500.jpg" alt="Fiat 500" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Fiat 500</p>
                             <a href="fiat_500.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ford">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ford_focus.jpg" alt="Ford Focus" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ford Focus</p>
                             <a href="ford_focus.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ford">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ford_mondeo.jpg" alt="Ford Mondeo" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ford Mondeo</p>
                             <a href="ford_mondeo.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box ford">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/ford_mustang.jpg" alt="Ford Mustang" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Ford Mustang</p>
                             <a href="ford_mustang.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box honda">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/honda_nsx.jpg" alt="Honda NSX" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Honda NSX</p>
                             <a href="honda_nsx.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box jaguar">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/jaguar_xf.jpg" alt="Jaguar XF" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Jaguar XF</p>
                             <a href="jaguar_xf.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box jaguar">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/jaguar_xj.jpg" alt="Jaguar XJ" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Jaguar XJ</p>
                             <a href="jaguar_xj.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box jaguar">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/jaguar_f-type.jpg" alt="Jaguar F-Type" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Jaguar F-Type</p>
                             <a href="jaguar_f-type.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box kia">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/kia_ceed.jpg" alt="Kia Cee'd" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Kia Cee'd</p>
                             <a href="kia_ceed.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box lamborghini">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/lamborghini_gallardo.jpg" alt="Lamborghini Gallardo" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Lamborghini Gallardo</p>
                             <a href="lamborghini_gallardo.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box lamborghini">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/lamborghini_aventador.jpg" alt="Lamborghini Aventador" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Lamborghini Aventador</p>
                             <a href="lamborghini_aventador.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box lamborghini">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/lamborghini_huracan.jpg" alt="Lamborghini Huracan" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Lamborghini Huracan</p>
                             <a href="lamborghini_huracan.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box lexus">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/lexus_ls%20(1).jpg" alt="Lexus LS" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Lexus LS</p>
                             <a href="lexus_ls.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mclaren">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mclaren_mp4_12c.jpg" alt="McLaren MP4-12C" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>McLaren MP4-12C</p>
                             <a href="mclaren_mp4_12c.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mclaren">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mclaren_675lt.jpg" alt="McLaren 675LT" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>McLaren 675LT</p>
                             <a href="mclaren_675lt.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mclaren">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mclaren_570s.jpg" alt="McLaren 570S" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>McLaren 570S</p>
                             <a href="mclaren_570s.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mercedes">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mercedes-benz_sls.jpg" alt="Mercedes-Benz SLS" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Mercedes-Benz SLS</p>
                             <a href="mercedes-benz_sls.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mercedes">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mercedes_amg_gt.jpg" alt="Mercedes AMG GT" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Mercedes AMG GT</p>
                             <a href="mercedes_amg_gt.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box mitsubishi">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/mitsubishi_evo_x.jpg" alt="Mitsubish Evo X" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Mitsubish Evo X</p>
                             <a href="mitsubishi_evo_x.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box nissan">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/nissan_note.jpg" alt="Nissan Note" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Nissan Note</p>
                             <a href="nissan_note.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box nissan">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/nissan_qashqai.JPG" alt="Nissan Qashqai" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Nissan Qashqai</p>
                             <a href="nissan_qashqai.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box nissan">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/nissan_gtr.jpg" alt="Nissan GT-R" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Nissan GT-R</p>
                             <a href="nissan_gtr.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box renault">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/renault_clio.jpg" alt="Renault Clio" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Renault Clio</p>
                             <a href="renault_clio.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box skoda">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/skoda_octavia.jpg" alt="Skoda Octavia" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Skoda Octavia</p>
                             <a href="skoda_octavia.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box subaru">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/subaru_impreza.jpg" alt="Subaru Impreza" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Subaru Impreza</p>
                             <a href="subaru_impreza.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box subaru">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/subaru_legacy.jpg" alt="Subaru Legacy" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Subaru Legacy</p>
                             <a href="subaru_legacy.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box tesla">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/tesla_model_s.jpg" alt="Tesla Model S" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Tesla Model S</p>
                             <a href="tesla_model_s.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box toyota">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/toyota_aygo.jpg" alt="Toyota Aygo" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Toyota Aygo</p>
                             <a href="toyota_aygo.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box toyota">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/toyota_aqua.jpg" alt="Toyota Aqua" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Toyota Aqua</p>
                             <a href="toyota_aqua.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box toyota">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/toyota_gt-86.jpg" alt="Toyota GT-86" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Toyota GT-86</p>
                             <a href="toyota_gt-86.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box vauxhall">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/vauxhall_astra.jpg" alt="Vauxhall Astra" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Vauxhall Astra</p>
                             <a href="vauxhall_astra.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box vauxhall">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/vauxhall_vxr8.jpg" alt="Vauxhall VXR8" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Vauxhall VXR8</p>
                             <a href="vauxhall_vxr8.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box volkswagen">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/vw_up.jpg" alt="Volkswagen Up!" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Volkswagen Up!</p>
                             <a href="vw_up.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box volkswagen">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/vw_golf.jpg" alt="Volkswagen Golf" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Volkswagen Golf</p>
                             <a href="vw_golf.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box volvo">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/volvo_c30.jpg" alt="Volvo C30" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Volvo C30</p>
                             <a href="volvo_c30.html"><button class="button button1">More Info</button></a>
                         </div>
-                        <div class="box">
+                        <div class="box volvo">
                             <div id="responsive" class="wow zoomIn">
                                 <img src="images/cars/volvo_v70.jpg" alt="Volvo V70" "width:590px;height:393px" onclick="onClick(this)" class="modal-hover-opacity"></div>
                             <p>Volvo V70</p>
@@ -567,7 +595,6 @@
             document.getElementById("img01").src = element.src;
             document.getElementById("modal01").style.display = "block";
         }
-
     </script>
 
     <script>
@@ -580,12 +607,10 @@
                 900
             );
         });
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script>
         new WOW().init();
-
     </script>
 </body>
 
