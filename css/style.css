@@ -31,11 +31,13 @@ h1 {
 h2 {
     font-size: 25px;
     font-family: Calibri, sans-serif;
+    animation-name: fadeIn;
 }
 
 h3 {
     word-spacing: 1px;
     font-family: Calibri, sans-serif;
+    animation-name: fadeIn;
 }
 
 p {
@@ -211,9 +213,20 @@ p {
 }
 
 .center h2 {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight:bold;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.center h3 {
+    font-size: 20px;
+    font-weight:bold;
+    margin-top: 0;
+    /*margin-bottom: 0px;*/
     text-align: center;
     color: #000;
     text-transform: uppercase;
@@ -661,8 +674,33 @@ textarea#message {
     margin-top: 10px;
 }
 
+.column {
+    width: 25%;
+    height: 298px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.column img {
+    max-height: 330px;
+    max-width: 90%;
+    border-radius: 4px;
+}
+
+.column a {
+    text-decoration: none;
+}
+
+.column p {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+
 img {
-    width: 70%;
+    width: 100%;
     border-radius: 4px;
 }
 
@@ -693,7 +731,7 @@ img {
     border: none;
     border-radius: 4px;
     color: white;
-    padding: 2px 2px;
+    padding: 6px 12px;
     font-family: Calibri, sans-serif;
     text-decoration: none;
     display: inline-block;
@@ -705,14 +743,19 @@ img {
     transition-duration: 0.4s;
 }
 
+.date {
+    animation-name: fadeIn;
+}
+
 .info {
+    animation-name: fadeIn;
     width: 80%;
     font-size: 15px;
     margin: auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
-.info ul li {
+#details ul li {
     font-size: 15px;
     padding: 2px;
     list-style-type: none;
