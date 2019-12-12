@@ -95,7 +95,7 @@
                     <img src="images/cars/logos/bmw_logo.jpg" style="width:100px;height:100px;"></div>
                 <h2>BMW 1-Series</h2>
                 <hr>
-                <div class="info">
+                <div class="info animated">
                     <img src="images/cars/bmw_1-series%20(1).jpg" alt="BMW 1-Series">
                     <div class="iframe-container">
                         <iframe width="456" height="240" src="https://www.youtube.com/embed/3tI4Yeg9HvA" frameborder="0" allowfullscreen>
@@ -103,12 +103,12 @@
                 </div>
             </div>
         </div>
-        <div class="info">
+        <div id="details">
             <ul>
-                <li><strong>BMW 1-Series</strong></li>
-                <li><strong>Power:</strong> 93 - 335 bhp</li>
-                <li><strong>0 - 60 mph:</strong> 4.5 - 11.8 secs</li>
-                <li><strong>Production:</strong> 2004 - Present</li>
+                <li class="wow slideInLeft"><strong>BMW 1-Series</strong></li>
+                <li class="wow slideInRight"><strong>Power:</strong> 93 - 335 bhp</li>
+                <li class="wow slideInLeft"><strong>0 - 60 mph:</strong> 4.5 - 11.8 secs</li>
+                <li class="wow slideInRight"><strong>Production:</strong> 2004 - Present</li>
                 <li><a href="cars.html"><button class="back_button button1">Back to List</button></a></li>
             </ul>
         </div>
@@ -157,7 +157,10 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/main.js"></script>
     <script src="contactform/contactform.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 
 </html>
